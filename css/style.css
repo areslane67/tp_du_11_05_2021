@@ -1,0 +1,256 @@
+/* reset css */
+/* pas travailler en px ni em */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background: url("../asset/wp4254894.jpg");
+}
+body{
+    font: 1.6rem 'Montserrat', sans-serif;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6,p,figure,ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: #222;
+    text-decoration: none;
+}
+*{
+    box-sizing: border-box;
+}
+button{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+/* theme css */
+
+:root{
+    --default-color: #222;
+    --background-color-header: #EBF7E3;
+    --main-color: #9BD770;
+    --middle-color: #375F1B;
+    --color-text: #fff;
+}
+header h1, footer p, section h3{
+    font-weight: 300;
+    text-align: center;
+    line-height: 6.5rem;
+}
+
+.article_of{
+    position: relative;
+   height: 0; /* les articles cachés */
+   opacity: 0;
+   z-index: -1;
+   overflow: hidden;
+   transition: all .6s ease-in-out;
+   
+
+}
+.article_on{
+    opacity: 1;
+    z-index: 1;
+    height: initial;
+}
+
+
+figure figcaption h2::before{
+    content: url("../asset/edit-2.svg");
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+main figure{
+    display: grid;
+    max-width: 80rem;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    
+    border: solid .1rem #ccc;
+    padding: 1rem;
+    box-shadow: -12px 8px 29px 8px #FFFFFF;
+    background: url(../asset/67783105-texture-de-la-plaque-d-acier-jaune-ou-vieille-rouille-rayé-fond-abstrait-en-métal-doré.jpg);
+}
+main figure img{
+    order: 1;
+    display: block;
+    width: 100%;
+    clip-path: circle(100%);
+}
+main figure figcaption h2,main figure figcaption p{
+    padding: 1rem 1rem 0 1rem;
+
+}
+main figure figcaption time{
+    padding: 1rem;
+    display: block;
+    color: white;
+    font-style: italic;
+    font-size: small;
+}
+main figure figcaption p{
+    line-height: 2.6rem;
+    padding-top: 0;
+}
+/* suite des article */
+main figure:nth-child(2n + 2) figcaption{
+    order: 2;
+}
+.btn-add{
+    font-size: initial;
+    padding: 1rem;
+    display: block;
+    width: 20rem;
+    text-align: center;
+    border: solid .1rem white;
+    margin: 2rem auto ;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn-add::before{
+    content:'+ ADD MORE';
+    color: white;
+}
+.btn-remove::before{
+    content:'- LESS ARTICLE';
+    color: white;
+}
+details{
+    max-width: 80rem;
+    margin:1rem auto;
+    padding: 1rem;
+    color: white;
+    
+    
+}
+details summary{
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    margin: auto;
+}
+
+details summary::-webkit-details-marker{
+    display: none;
+}
+details summary::before{
+    display: inline-block;
+    content: "\203A";
+    margin-right: .5rem;
+    transform: rotate(0deg);
+    vertical-align: top;
+}
+details[open] summary::before{
+    content: "\203A";
+    transform: rotate(90deg);
+}
+details ul {
+    line-height: 3.5rem;
+    
+}
+details ul li a{
+color: white;
+}
+/* responsive */
+@media screen and (max-width: 70rem){
+    main figure{
+    grid-template-columns: repeat(1, 1fr);
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    main figure:nth-child(2n + 2) figcaption{
+        order:initial;
+    }
+ 
+ 
+
+}
+@media screen and (orientation:landscape){
+    main figure{
+        grid-template-columns: repeat(2, 1fr);
+        }
+        header h1{
+            font-size: xx-large;
+        }
+        main figure:nth-child(2n + 2) figcaption{
+            order: 1;
+        }
+
+}
+
+
+
+
+nav {
+    height: 10rem;
+    background: url(../asset/wp4254894.jpg);
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav img{
+    height: 10rem;
+}
+    
+nav .bouton{
+  
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding:  0rem 5rem;
+}
+nav .bouton li{
+    cursor: pointer;
+    margin: 0 5rem;
+    background: url("../asset/67783105-texture-de-la-plaque-d-acier-jaune-ou-vieille-rouille-rayé-fond-abstrait-en-métal-doré.jpg");
+    padding: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    box-shadow: 0px 0px 50px -6px #FFFFFF;
+}
+footer ul li {
+    padding-left: 34rem ;
+}
+
+
+
+
+header{
+    height: 50vh;
+    background: url("../asset/Pokemon-Wallpaper-HD.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    text-align: center;
+    padding-top: 14rem;
+    font-size: 5rem;
+    color: rgb(90, 88, 53);
+    font-family: cursive;
+}
+
+ 
+footer p {
+    color: white;
+}
+
+#pub_2 img {
+    height: 30rem;
+}
+.image45 {
+    height: 10rem;
+  
+}
